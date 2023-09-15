@@ -1,5 +1,9 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+This is a Whatsapp clone project, the base projected was based from this [video](https://www.youtube.com/watch?v=9afMU7GOcAg) from Coding in Flow
+
+Tags: #Clerk Auth #Web Push #TailWindCSS #Lucide #Stream Chat #Zod #Svix
+
 ## Getting Started
 
 First, run the development server:
