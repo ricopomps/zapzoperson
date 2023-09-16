@@ -54,6 +54,7 @@ export default function ChatPage() {
         console.error(error);
       }
     }
+    syncPushSubscription();
   }, []);
 
   const handleSidebarOnClose = useCallback(() => {
