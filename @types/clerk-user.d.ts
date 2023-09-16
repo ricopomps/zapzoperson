@@ -4,4 +4,8 @@ declare global {
   interface UserPrivateMetadata {
     subscriptions?: PushSubscription[];
   }
+
+  interface UserUnsafeMetadata {
+    mutedChannels?: string[];
+  }
 }
