@@ -1,3 +1,4 @@
+import { auth } from "@clerk/nextjs";
 import { clerkClient, currentUser } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { PushSubscription } from "web-push";
@@ -16,7 +17,8 @@ export async function POST(req: Request) {
     console.log("Received subscription", newSubscription);
 
     const user = await currentUser();
-    if (!user) {
+    const { sessionId } = auth();
+    if (!user || !sessionId) {
       return NextResponse.json(
         {
           error: "User not authenticated",
@@ -31,7 +33,7 @@ export async function POST(req: Request) {
       (subscription) => subscription.endpoint !== newSubscription.endpoint
     );
 
-    updatedSubscriptions.push(newSubscription);
+    updatedSubscriptions.push({ ...newSubscription, sessionId });
 
     await clerkClient.users.updateUser(user.id, {
       privateMetadata: { subscriptions: updatedSubscriptions },

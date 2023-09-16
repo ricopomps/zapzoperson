@@ -4,6 +4,7 @@ import { z } from "zod";
 export const env = createEnv({
   server: {
     CLERK_SECRET_KEY: z.string().nonempty(),
+    CLERK_WEBHOOK_KEY: z.string().nonempty(),
     STREAM_SECRET: z.string().nonempty(),
     WEB_PUSH_PRIVATE_KEY: z.string().nonempty(),
   },
