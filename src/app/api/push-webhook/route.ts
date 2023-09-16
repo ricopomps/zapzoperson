@@ -4,6 +4,7 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
     console.log("It just works", body);
+    console.log("It just works", JSON.stringify(body));
 
     return NextResponse.json({ sucess: true }, { status: 200 });
   } catch (error) {
