@@ -96,7 +96,6 @@ function PushSubscriptionToggleButton() {
   }
 
   if (hasActivePushSubscription === undefined) return null;
-  //4:17:30 storage solution
 
   return (
     <div className="relative">
